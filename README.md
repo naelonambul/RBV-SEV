@@ -10,7 +10,6 @@ URL : https://www.erdcloud.com/d/Zug9szTq7AZruYPQG
 
 URL : https://documenter.getpostman.com/view/8156330/UyrHeYui
 
-
 ## 사용 기술
 - [Spring Boot](https://spring.io/projects/spring-boot) **2.6.7**
 - [Spring Data_JPA](https://spring.io/projects/spring-data-jpa) 
@@ -27,7 +26,7 @@ URL : https://documenter.getpostman.com/view/8156330/UyrHeYui
 ### 참조링크
 - [SpringBoot-Oauth2](https://deeplify.dev/back-end/spring/oauth2-social-login)
 - [김영한의 스프링부트와 JPA 실무](https://www.inflearn.com/roadmaps/149)
-- 
+
 ### 폴더 구조
 ```text
 java.com.rbc.red
