@@ -12,10 +12,10 @@ URL : https://documenter.getpostman.com/view/8156330/UyrHeYui
 
 
 ## 사용 기술
-- [Spring Boot](https://spring.io/projects/spring-boot)
-- [Spring Data_JPA](https://spring.io/projects/spring-data-jpa)
-- [Spring Security](https://spring.io/projects/spring-security)
-- [QueryDsl](https://http://querydsl.com/)
+- [Spring Boot](https://spring.io/projects/spring-boot) **2.6.7**
+- [Spring Data_JPA](https://spring.io/projects/spring-data-jpa) 
+- [Spring Security](https://spring.io/projects/spring-security) 
+- [QueryDsl](https://http://querydsl.com/) **5.0.0**
 
 ### server
 - [Dorker](https://www.docker.com/) **v20.10.14**
