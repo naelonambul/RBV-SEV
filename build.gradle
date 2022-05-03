@@ -1,0 +1,84 @@
+buildscript {
+	ext {
+		queryDslVersion = "5.0.0"
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	//querydsl 추가
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+	id 'java'
+}
+
+group = 'com.rbc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+	//querydsl 추가
+	implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
+	annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}"
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	//테스트에서 lombok 사용
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	//스웨거
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+}
+
+configurations {
+	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+	all*.exclude group: 'org.springframework.boot', module: 'logback-classic'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+//querydsl 추가 시작
+def querydslDir = "$buildDir/generated/querydsl"
+querydsl {
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+sourceSets {
+	main.java.srcDir querydslDir
+}
+configurations {
+	querydsl.extendsFrom compileClasspath
+}
+compileQuerydsl {
+	options.annotationProcessorPath = configurations.querydsl
+}
+//querydsl 추가 끝
