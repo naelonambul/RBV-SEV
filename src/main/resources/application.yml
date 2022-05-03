@@ -40,8 +40,8 @@ spring:
     oauth2.client:
       registration:
         google:
-          clientId: '636722120333-qfe6106p204iivpoqa7paooft5khe475.apps.googleusercontent.com'
-          clientSecret: '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'
+          clientId: ''
+          clientSecret: ''
           scope:
             - email
             - profile
