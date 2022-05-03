@@ -24,6 +24,10 @@ URL : https://documenter.getpostman.com/view/8156330/UyrHeYui
 ### DB
 - [MariaDB](https://mariadb.org/) **10.6.7**
 
+### 참조링크
+- [SpringBoot-Oauth2](https://deeplify.dev/back-end/spring/oauth2-social-login)
+- [김영한의 스프링부트와 JPA 실무](https://www.inflearn.com/roadmaps/149)
+- 
 ### 폴더 구조
 ```text
 java.com.rbc.red
