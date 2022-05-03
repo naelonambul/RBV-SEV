@@ -25,6 +25,7 @@ URL : https://documenter.getpostman.com/view/8156330/UyrHeYui
 - [MariaDB](https://mariadb.org/) **10.6.7**
 
 ### 폴더 구조
+```text
 java.com.rbc.red
 ├── api
 |   ├──controller
