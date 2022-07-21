@@ -1,6 +1,7 @@
 package com.rbc.red.api.service;
 
 import com.rbc.red.api.entity.user.User;
+import com.rbc.red.api.repository.*;
 import com.rbc.red.api.repository.user.UserRepository;
 import com.rbc.red.oauth.entity.ProviderType;
 import com.rbc.red.oauth.entity.RoleType;
@@ -25,11 +26,28 @@ class UserServiceTest {
     @Autowired
     EntityManager em;
 
+    @Autowired
+    TeamRepository teamRepository;
+    @Autowired
+    UserTeamRepository userTeamRepository;
+
+    @Autowired
+    BookRepository bookRepository;
+    @Autowired
+    CategoryRepository categoryRepository;
+    @Autowired
+    AssetRepository assetRepository;
+    @Autowired GroupRepository groupRepository;
     @BeforeEach
     public void beforeEach(){
-
+        userTeamRepository.deleteAll();
+        userRepository.deleteAll();
+        teamRepository.deleteAll();
+        bookRepository.deleteAll();
+        categoryRepository.deleteAll();
+        assetRepository.deleteAll();
+        groupRepository.deleteAll();
     }
-
     @AfterEach
     public void afterEach(){
 

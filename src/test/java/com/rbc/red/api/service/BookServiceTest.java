@@ -2,6 +2,8 @@ package com.rbc.red.api.service;
 
 import com.rbc.red.api.entity.*;
 import com.rbc.red.api.entity.user.User;
+import com.rbc.red.api.repository.*;
+import com.rbc.red.api.repository.user.UserRepository;
 import com.rbc.red.oauth.entity.ProviderType;
 import com.rbc.red.oauth.entity.RoleType;
 import org.assertj.core.api.Assertions;
@@ -31,10 +33,27 @@ class BookServiceTest {
     @Autowired TeamService teamService;
     @Autowired UserTeamService userTeamService;
     @Autowired EntityManager em;
+    @Autowired
+    TeamRepository teamRepository;
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    UserTeamRepository userTeamRepository;
 
-
+    @Autowired BookRepository bookRepository;
+    @Autowired CategoryRepository categoryRepository;
+    @Autowired AssetRepository assetRepository;
+    @Autowired GroupRepository groupRepository;
     @BeforeEach
     public void beforeEach(){
+        userTeamRepository.deleteAll();
+        userRepository.deleteAll();
+        teamRepository.deleteAll();
+        bookRepository.deleteAll();
+        categoryRepository.deleteAll();
+        assetRepository.deleteAll();
+        groupRepository.deleteAll();
+
         LocalDateTime now = LocalDateTime.now();
         User user1 = new User(
                 "1111111",
@@ -69,7 +88,6 @@ class BookServiceTest {
 
     @AfterEach
     public void afterEach(){
-
     }
 
     @Test
