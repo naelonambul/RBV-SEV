@@ -1,0 +1,45 @@
+# RBV-SEV 공유 가계부 개발
+
+**소개 :** 기존의 가계부 기능 + 공유기능을 추가하여 쉽게 수입, 지출 상황을 공유, 관리할수 있는 기능을 제공.
+
+## ERD 
+
+URL : https://www.erdcloud.com/d/Zug9szTq7AZruYPQG
+
+## API
+
+URL : https://documenter.getpostman.com/view/8156330/UyrHeYui
+
+## 사용 기술
+- [Spring Boot](https://spring.io/projects/spring-boot) **2.6.7**
+- [Spring Data_JPA](https://spring.io/projects/spring-data-jpa) 
+- [Spring Security](https://spring.io/projects/spring-security) 
+- [QueryDsl](https://http://querydsl.com/) **5.0.0**
+
+### server
+- [Dorker](https://www.docker.com/) **v20.10.14**
+- [docker-compose](https://www.docker.com/) 
+
+### DB
+- [MariaDB](https://mariadb.org/) **10.6.7**
+
+### 참조링크
+- [SpringBoot-Oauth2](https://deeplify.dev/back-end/spring/oauth2-social-login)
+- [김영한의 스프링부트와 JPA 실무](https://www.inflearn.com/roadmaps/149)
+
+### 폴더 구조
+```text
+java.com.rbc.red
+├── api
+|   ├──controller
+|   ├──dto
+|   ├──entity
+|   ├──exxeption
+|   ├──repository
+|   └──service
+├── common (외부 응답 Dto)
+├── config (스웨거, Cors, Security, JWT 설정)
+├── oauth (Oauth2 기능)
+├── utils (쿠키, 헤더)
+└── BookApplication.java
+
